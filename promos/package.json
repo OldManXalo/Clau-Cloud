@@ -1,0 +1,23 @@
+{
+  "name": "promos",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Videos publicitarios estilo cristal (Barber Gest, Data Gest) hechos con Remotion",
+  "scripts": {
+    "studio": "remotion studio",
+    "render:barbergest": "remotion render BarberGest out/barbergest.mp4",
+    "render:datagest": "remotion render DataGest out/datagest.mp4",
+    "render": "npm run render:barbergest && npm run render:datagest"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.2.5",
+    "@remotion/cli": "4.0.532",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "remotion": "4.0.532"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "typescript": "^5.6.0"
+  }
+}
