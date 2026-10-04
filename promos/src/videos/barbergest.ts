@@ -22,6 +22,18 @@ export const guionBarberGest: Guion = {
     lema: 'Gestión de barberías en bolívares y dólares',
     oferta: { etiqueta: 'Pruébalo', texto: 'Pide tu demo hoy' },
   },
+  // Locución: una frase por escena; `desde` = segundo en que arranca el clip (escenas en
+  // 0 · 6 · 10 · 12 · 16 · 20 · 24 · 28 s). El clip N va en public/<voz>/NN.mp3.
+  locucion: [
+    { desde: 0.4, texto: 'Tu barbería no para. Pero al cerrar… ¿cuánto entró y cuánto le toca a cada uno?' },
+    { desde: 6.3, texto: 'Ahora, cada corte se registra con un toque.' },
+    { desde: 10.2, texto: 'Con BarberGest.' },
+    { desde: 12.3, texto: 'Cobra en dólares o bolívares, con la tasa del día guardada.' },
+    { desde: 16.3, texto: 'El pago de cada barbero se calcula solo.' },
+    { desde: 20.3, texto: 'Mira tus ingresos y cierra la caja cuadrada.' },
+    { desde: 24.3, texto: 'Todas tus sucursales en la nube… incluso sin internet.' },
+    { desde: 28.4, texto: 'BarberGest. La gestión de tu barbería, en bolívares y dólares. Pide tu demo hoy.' },
+  ],
   escenas: [
     {
       tipo: 'hero',

@@ -24,6 +24,18 @@ export const guionDataGest: Guion = {
     lema: 'Inventario por serial, caja y tasa del día',
     oferta: { etiqueta: 'Pruébalo', texto: 'Pide tu demo hoy' },
   },
+  // Locución: una frase por escena; `desde` = segundo en que arranca el clip (escenas en
+  // 0 · 6 · 10 · 12 · 16 · 20 · 24 · 28 s). El clip N va en public/<voz>/NN.mp3.
+  locucion: [
+    { desde: 0.4, texto: 'Tu tienda vende sin parar. ¿Pero sabes dónde está cada equipo… y a qué precio?' },
+    { desde: 6.3, texto: 'Busca por serial o IMEI y lo encuentras al instante.' },
+    { desde: 10.2, texto: 'Con Data Gest.' },
+    { desde: 12.3, texto: 'Cada unidad con su serial. El stock se cuenta solo.' },
+    { desde: 16.3, texto: 'Cobra en bolívares o en dólares, con la tasa del día.' },
+    { desde: 20.3, texto: 'Mueve equipos entre locales, con rastro de todo.' },
+    { desde: 24.3, texto: 'Y al final del día, la caja cierra cuadrada.' },
+    { desde: 28.4, texto: 'Data Gest. Inventario por serial, caja y tasa del día. Pide tu demo hoy.' },
+  ],
   escenas: [
     {
       tipo: 'hero',

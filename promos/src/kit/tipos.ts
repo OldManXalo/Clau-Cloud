@@ -105,7 +105,11 @@ export type EscenaDef =
   | EscenaTarjetas
   | EscenaCierre;
 
+/** Una frase de la locución: `desde` en segundos (el clip de audio empieza ahí). */
+export type FraseVoz = { desde: number; texto: string };
+
 export type Guion = {
   marca: Marca;
   escenas: EscenaDef[];
+  locucion?: FraseVoz[];
 };

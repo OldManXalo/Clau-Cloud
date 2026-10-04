@@ -17,7 +17,16 @@ import { Panel } from './escenas/Panel';
 import { Rejilla } from './escenas/Rejilla';
 import { Tarjetas } from './escenas/Tarjetas';
 
-export type PromoProps = { guion: Guion; tema: Tema; musica?: string };
+export type PromoProps = {
+  guion: Guion;
+  tema: Tema;
+  /** Archivo de música dentro de public/ (p. ej. 'musica.mp3'). */
+  musica?: string;
+  /** Carpeta dentro de public/ con un clip por frase de la locución: 01.mp3, 02.mp3… */
+  voz?: string;
+  /** Volumen de la música (0–1). Con voz conviene ~0.25 para que se entienda. */
+  volumenMusica?: number;
+};
 
 /** Fotograma de inicio de cada escena (se solapan SOLAPE fotogramas). */
 export const inicios = (escenas: EscenaDef[]) => {
@@ -42,7 +51,7 @@ const useFuentes = () => {
   }, [h]);
 };
 
-export const Promo: React.FC<PromoProps> = ({ guion, tema, musica }) => {
+export const Promo: React.FC<PromoProps> = ({ guion, tema, musica, voz, volumenMusica }) => {
   useFuentes();
   const f = useCurrentFrame();
   const ini = inicios(guion.escenas);
@@ -60,7 +69,13 @@ export const Promo: React.FC<PromoProps> = ({ guion, tema, musica }) => {
         </Sequence>
       ))}
       {destello > 0 && <AbsoluteFill style={{ background: 'radial-gradient(circle at 50% 45%, #fff 30%, #f2f6ff 100%)', opacity: destello }} />}
-      {musica && <Audio src={staticFile(musica)} />}
+      {musica && <Audio src={staticFile(musica)} volume={volumenMusica ?? (voz ? 0.25 : 1)} />}
+      {voz &&
+        guion.locucion?.map((frase, i) => (
+          <Sequence key={`voz${i}`} from={Math.round(frase.desde * 30)} name={`voz ${i + 1}`}>
+            <Audio src={staticFile(`${voz}/${String(i + 1).padStart(2, '0')}.mp3`)} />
+          </Sequence>
+        ))}
     </AbsoluteFill>
   );
 };
