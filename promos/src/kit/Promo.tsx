@@ -22,7 +22,11 @@ export type PromoProps = {
   tema: Tema;
   /** Archivo de música dentro de public/ (p. ej. 'musica.mp3'). */
   musica?: string;
-  /** Carpeta dentro de public/ con un clip por frase de la locución: 01.mp3, 02.mp3… */
+  /**
+   * Locución dentro de public/. Dos formas:
+   * - un archivo (`'voz/barbergest.mp3'`): pista completa ya sincronizada, suena desde el segundo 0;
+   * - una carpeta (`'voz/barbergest'`): un clip por frase (01.mp3, 02.mp3…) en `guion.locucion`.
+   */
   voz?: string;
   /** Volumen de la música (0–1). Con voz conviene ~0.25 para que se entienda. */
   volumenMusica?: number;
@@ -70,7 +74,9 @@ export const Promo: React.FC<PromoProps> = ({ guion, tema, musica, voz, volumenM
       ))}
       {destello > 0 && <AbsoluteFill style={{ background: 'radial-gradient(circle at 50% 45%, #fff 30%, #f2f6ff 100%)', opacity: destello }} />}
       {musica && <Audio src={staticFile(musica)} volume={volumenMusica ?? (voz ? 0.25 : 1)} />}
+      {voz && /\.(mp3|wav|m4a|aac)$/i.test(voz) && <Audio src={staticFile(voz)} />}
       {voz &&
+        !/\.(mp3|wav|m4a|aac)$/i.test(voz) &&
         guion.locucion?.map((frase, i) => (
           <Sequence key={`voz${i}`} from={Math.round(frase.desde * 30)} name={`voz ${i + 1}`}>
             <Audio src={staticFile(`${voz}/${String(i + 1).padStart(2, '0')}.mp3`)} />

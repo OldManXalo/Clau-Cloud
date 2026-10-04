@@ -19,5 +19,6 @@ npm run render              # → out/barbergest.mp4 y out/datagest.mp4
 - **Colores:** `temaBarberGest` / `temaDataGest` al principio de cada archivo.
 - **Duración:** `dur` de cada escena, en fotogramas (30 = 1 s). Cada escena se solapa 10 con la
   siguiente.
+- **Voz:** `public/voz/barbergest.mp3` y `public/voz/datagest.mp3` (pistas completas ya sincronizadas, prop `voz` en `src/Root.tsx`).
 - **Música:** copia el archivo a `public/` y agrega `musica: 'musica.mp3'` a las props del video en
   `src/Root.tsx`.

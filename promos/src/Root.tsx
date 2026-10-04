@@ -5,8 +5,8 @@ import { guionBarberGest, temaBarberGest } from './videos/barbergest';
 import { guionDataGest, temaDataGest } from './videos/datagest';
 
 const promos: { id: string; props: PromoProps }[] = [
-  { id: 'BarberGest', props: { guion: guionBarberGest, tema: temaBarberGest } },
-  { id: 'DataGest', props: { guion: guionDataGest, tema: temaDataGest } },
+  { id: 'BarberGest', props: { guion: guionBarberGest, tema: temaBarberGest, voz: 'voz/barbergest.mp3' } },
+  { id: 'DataGest', props: { guion: guionDataGest, tema: temaDataGest, voz: 'voz/datagest.mp3' } },
 ];
 
 export const Root: React.FC = () => (
