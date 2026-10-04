@@ -75,7 +75,7 @@ en degradado («Cada corte, **un toque.**»).
    inicio de la escena + 0,3), a ~2,7 palabras por segundo, que complemente lo que se ve sin leerlo
    palabra por palabra; el logo lleva solo el nombre y el cierre repite marca + lema + llamado.
    Documenta tabla, duración máxima por frase e indicaciones de voz como en
-   `promos/locucion/GUION_LOCUCION.md`. Los clips van en `public/<carpeta>/01.mp3…` y se activan con
+   `promos/locucion/LOCUCION_BARBERGEST.md` (un archivo por video). Los clips van en `public/<carpeta>/01.mp3…` y se activan con
    la prop `voz`; con voz, la música baja a `volumenMusica` 0,25.
 8. **Renderizar y verificar** el MP4 con ffprobe (1920×1080, 30 fps, duración esperada) y
    `movimiento.py` (solo deben quedar quietos el logo y la firma).
